@@ -2,22 +2,16 @@ const express = require("express");
 const handlebars = require("express-handlebars");
 const session = require("express-session");
 const flash = require("express-flash");
-const FileStore = require("session-file-store")(session);
-const path = require("path");
-const os = require("os");
 
-// Inicializa o express
 const app = express();
 
 const connection = require("./database/connection");
 
-// Import Models
-const acomodacao = require("./models/acomodacao");
+const reserva = require("./models/reserva");
 
-// Import Routers
 const authRouters = require("./routes/authRouters");
 
-// Configurando o handlebars
+
 const hbs = handlebars.create({
   partialsDir: ["views/partials"],
   helpers: {
@@ -32,21 +26,18 @@ const hbs = handlebars.create({
 app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
 
-// Configurando o envio de dados
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// Para usar arquivos estáticos
+
 app.use(express.static("public"));
 
-// Utilizando rotas
-// app.use("/", authRouters);
 
 app.get('/', (req, res) => {
   return res.render('home')
 })
 
-// Conexão com o banco de dados
 connection
   .sync()
   .then(() => {
