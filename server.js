@@ -36,29 +36,6 @@ app.set("view engine", "handlebars");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-//Configurando a sessão do usuário
-app.use(
-  session({
-    name: "session",
-    secret: "SenhaForte",
-    resave: false,
-    saveUninitialized: false,
-    store: new FileStore({
-      logFn: () => {},
-      path: path.join(os.tmpdir(), "session"),
-    }),
-    cookie: {
-      secure: false,
-      maxAge: 360000,
-      expires: new Date(Date.now() + 360000),
-      httpOnly: true,
-    },
-  })
-);
-
-// Mensagens
-app.use(flash());
-
 // Para usar arquivos estáticos
 app.use(express.static("public"));
 
