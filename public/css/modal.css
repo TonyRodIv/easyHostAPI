@@ -1,0 +1,77 @@
+#modal {
+    display: none;
+    position: fixed;
+    background-color: #0000008a;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal {
+    background-color: #fff;
+    border-radius: 25px;
+    /* width: 50vw; */
+    /* height: 60vh; */
+    padding: 30px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.headModal {
+    width: 100%;
+    /* padding: 0 20px; */
+    display: flex;
+    justify-content: center;
+}
+
+.formInputs {
+    margin: auto;
+    /* width: 80%; */
+    padding: 20px 0;
+    gap: 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.inputModal {
+    width: 320px;
+    height: 60px;
+    padding: 15px;
+    border-radius: 15px;
+    border: 1px solid rgba(231, 231, 231, 0.50);
+    background: rgba(246, 246, 246, 0.80);
+}
+
+.submitBtn {
+    color: white;
+    background: #434343;
+}
+
+.submitBtn, .cancelBtn{
+    border-radius: 25px;
+    width: 180px;
+    height: 50px;
+    font-weight: 600;
+    font-size: 0.8VW;
+    border: none;
+    cursor: pointer;
+}
+
+.modalBtns{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.inputName{
+    color: #434343;
+    font-weight: bold;
+    margin-bottom: 5px;
+}

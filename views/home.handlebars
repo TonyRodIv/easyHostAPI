@@ -1,5 +1,3 @@
-
-
 <main class="mainDash">
     <header class="headerDash">
         <p class="titlePage">Painel de Controle</p>
@@ -14,18 +12,157 @@
     </header>
     <section class="cardsDashboard">
         <figure class="cardBigDashboard">
-
+            <section class="textBigCardDashboard">
+                <p class="titleCard">
+                    Reservas em Andamento
+                </p>
+                <p class="subtitleCard">
+                    Existem <span>7</span> reservas que estão em processo de andamento
+                </p>
+            </section>
+            <section class="iconBigCardDashboard">
+                <img src="/assets/icons/OnGoingIcon.svg" alt="" srcset="">
+            </section>
         </figure>
         <section class="subCardsDashboard">
             <figure class="cardSmallDashboard">
-                
+                <section class="textSmallCardDashboard">
+                    <p class="titleCardSmall">
+                        Lista de Espera
+                    </p>
+                    <p class="subtitleCard">
+                        Existem <span>7</span> reservas que estão na lista de espera
+                    </p>
+                </section>
+                <section class="iconSmallCardDashboard">
+                    <img src="/assets/icons/waitingIcon.svg" alt="" srcset="">
+                </section>
             </figure>
             <figure class="cardSmallDashboard csd2">
-
+                <section class="textSmallCardDashboard">
+                    <p class="titleCardSmall">
+                        Check-out's
+                    </p>
+                    <p class="subtitleCard">
+                        <span>10</span> Check-out's foram feitos com sucesso
+                    </p>
+                </section>
+                <section class="iconSmallCardDashboard">
+                    <img src="/assets/icons/DoneIcon.svg" alt="" srcset="">
+                </section>
             </figure>
         </section>
         <figure class="notificationContainerDashboard">
 
         </figure>
     </section>
+    <section class="lastChanges">
+        <header class="headLastChanges">
+            <p class="titlePage">
+                Últimas Mudanças
+            </p>
+
+            <section class="buttonsLastChanges">
+                <button class="addBtn btn" id="addBtn">Adicionar</button>
+                <a href="/history"><button class="seeAllBtn btn" >Ver tudo</button></a>
+                
+            </section>
+        </header>
+        <main class="listLastChanges">
+            <figure class="table">
+                <article class="itemTb">
+                    <p class="titleColumn">
+                        Acomodação
+                    </p>
+                    <p class="titleColumn">
+                        Nome do Hópede
+                    </p>
+                    <p class="titleColumn">
+                        Data de Entrada
+                    </p>
+                    <p class="titleColumn">
+                        Data de Saída
+                    </p>
+                    <p class="titleColumn">
+                        Status da reserva
+                    </p>
+                    <p class="titleColumn">
+                        ID
+                    </p>
+                </article>
+                <hr style="margin-top: 10px;">
+            </figure>
+            {{#each reservas}}
+            <figure class="table">
+                <article class="itemTb">
+                    <p class="titleItem">
+                        {{this.nome_acomodacao}}
+                    </p>
+                    <p class="titleItem">
+                        {{this.nome_hospede}}
+                    </p>
+                    <p class="titleItem">
+                        {{this.data_entrada}}
+                    </p>
+                    <p class="titleItem">
+                        {{this.data_saida}}
+                    </p>
+                    <p class="titleItem">
+                        {{this.status_reserva}}
+                    </p>
+                    <p class="titleItem">
+                        {{this.id}}
+                    </p>
+                </article>
+            </figure>
+            {{/each}}
+        </main>
+    </section>
 </main>
+
+
+<section class="modalBg" id="modal">
+    <section class="modal">
+        <header class="headModal">
+            <p class="titlePage">
+                Adicionar Reserva
+            </p>
+        </header>
+        <form action="/reserve/add" method="POST" class="form">
+            <section class="formInputs">
+                <figure class="inputField">
+                    <p class="inputName">Nome da Acomodação</p>
+
+                    <input type="text" name="nome_acomodacao" id="" placeholder="Digite o nome da Acomodação"
+                        class="inputModal">
+                </figure>
+                <figure class="inputField">
+                    <p class="inputName">Nome do Hóspede</p>
+
+                    <input type="text" name="nome_hospede" id="" placeholder="Digite o nome do Hóspede"
+                        class="inputModal">
+                </figure>
+                <figure class="inputField">
+                    <p class="inputName">Status da Reserva</p>
+
+                    <input type="number" name="status_reserva" id="" placeholder="Digite o Status da Reserva"   class="inputModal">
+                </figure>
+                <figure class="inputField">
+                    <p class="inputName">Data de Entrada</p>
+            
+                <input type="date" name="data_entrada" id="" placeholder="Digite a data de entrada" class="inputModal">
+                </figure>
+                <figure class="inputField">
+                    <p class="inputName">Data de Saída</p>
+                    
+                <input type="date" name="data_saida" id="" placeholder="Digite a data de saída" class="inputModal">
+                </figure>
+            </section>
+
+            <section class="modalBtns">
+                <input type="button" value="Cancelar" class="cancelBtn" id="cancelBtn">
+                <input type="submit" value="Adicionar Reserva" class="submitBtn" id="addBtn">
+            </section>
+        </form>
+    </section>
+</section>

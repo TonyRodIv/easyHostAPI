@@ -3,18 +3,31 @@ const { DataTypes } = require("sequelize");
 const database = require("../database/connection");
 
 const acomodacao = database.define("acomodacao", {
-  name: {
+  nome_acomodacao: {
     type: DataTypes.STRING,
     allowNull: false,
     require: true,
   },
-
-  email: {
+  nome_hospede: {
     type: DataTypes.STRING,
     allowNull: false,
     require: true,
-    unique: true,
   },
+  status_reserva: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    require: true,
+  },
+  data_entrada:{
+    type: DataTypes.DATE,
+    allowNull: false,
+    require: true,
+  },
+  data_saida:{
+    type: DataTypes.DATE,
+    allowNull: false,
+    require: true,
+  }
 });
 
 module.exports = acomodacao;

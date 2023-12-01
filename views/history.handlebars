@@ -1,0 +1,70 @@
+<main class="mainDash">
+    <header class="headerDash">
+        <p class="titlePage">histórico Geral</p>
+        <input type="search" name="search" id="" class="searchBar" placeholder="Pesquise aqui...">
+        <article class="profileCont">
+            <img src="/assets/icons/arrowPfp.svg" class="arrow" alt="" srcset="">
+            <p class="profileContTitle">
+                Rafael Souza
+            </p>
+            <img src="/assets/img/pfp/pfp1.png" alt="" class="pfp" srcset="">
+        </article>
+    </header>
+    <section class="lastChanges lc2">
+        <header class="headLastChanges">
+
+            <section class="buttonsLastChanges">
+                <button class="addBtn btn" id="addBtn">Adicionar</button>
+            </section>
+        </header>
+        <main class="listLastChanges">
+            <figure class="table">
+                <article class="itemTb">
+                    <p class="titleColumn">
+                        Acomodação
+                    </p>
+                    <p class="titleColumn">
+                        Nome do Hópede
+                    </p>
+                    <p class="titleColumn">
+                        Data de Entrada
+                    </p>
+                    <p class="titleColumn">
+                        Data de Saída
+                    </p>
+                    <p class="titleColumn">
+                        Status da reserva
+                    </p>
+                    <p class="titleColumn">
+                        ID
+                    </p>
+                </article>
+                <hr style="margin-top: 10px;">
+            </figure>
+            {{#each reservas}}
+            <figure class="table">
+                <article class="itemTb">
+                    <p class="titleItem">
+                        {{this.nome_acomodacao}}
+                    </p>
+                    <p class="titleItem">
+                        {{this.nome_hospede}}
+                    </p>
+                    <p class="titleItem">
+                        {{this.data_entrada}}
+                    </p>
+                    <p class="titleItem">
+                        {{this.data_saida}}
+                    </p>
+                    <p class="titleItem">
+                        {{this.status_reserva}}
+                    </p>
+                    <p class="titleItem">
+                        {{this.id}}
+                    </p>
+                </article>
+            </figure>
+            {{/each}}
+        </main>
+    </section>
+</main>

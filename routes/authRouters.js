@@ -1,8 +1,10 @@
 const express = require("express");
 const router = express.Router();
 
-const AuthController = require("../controllers/AuthController");
+const { ControleReservas, listTable, historicoGeral } = require("../controllers/reserverController");
 
-router.post("/register", AuthController.register);
+router.get("/", listTable)
+router.post("/reserve/add", ControleReservas)
+router.get("/history", historicoGeral)
 
 module.exports = router;

@@ -8,9 +8,9 @@ const app = express();
 const connection = require("./database/connection");
 
 const reserva = require("./models/reserva");
+const acomodacao = require("./models/acomodacao");
 
 const authRouters = require("./routes/authRouters");
-
 
 const hbs = handlebars.create({
   partialsDir: ["views/partials"],
@@ -33,11 +33,10 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
+app.use(authRouters)
 
-app.get('/', (req, res) => {
-  return res.render('home')
-})
 
+// {force: true}
 connection
   .sync()
   .then(() => {
