@@ -1,8 +1,5 @@
 const express = require("express");
 const handlebars = require("express-handlebars");
-const session = require("express-session");
-const flash = require("express-flash");
-
 const app = express();
 
 const connection = require("./database/connection");
