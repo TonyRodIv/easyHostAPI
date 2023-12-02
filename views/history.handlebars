@@ -1,46 +1,4 @@
-<style>
-    .icDash {
-        background: none;
-    }
-
-    .icDash a {
-        color: #434343;
-    }
-
-    .iconIcDash {
-        filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(50%) contrast(60%);
-    }
-
-    .iconIcHist {
-        filter: none;
-    }
-
-    .icHist {
-        background: var(--linear-cardbg, linear-gradient(151deg, #3D6E9C 14.5%, #3E91AD 96.35%));
-    }
-
-    .icHist a {
-        color: #fff;
-    }
-
-    .alternatePageDash {
-        display: block;
-    }
-
-    .alternatePageHist {
-        display: none;
-    }
-
-    .outHist {
-        width: 9px;
-        height: 14px;
-    }
-
-    .outDash {
-        width: 0;
-        height: 0;
-    }
-</style>
+<link rel="stylesheet" href="/css/history.css">
 <main class="mainDash">
     <header class="headerDash">
         <p class="titlePage">histórico Geral</p>
@@ -99,9 +57,7 @@
                     <p class="titleItem">
                         {{this.data_saida}}
                     </p>
-                    <p class="titleItem">
-                        {{this.status_reserva}}
-                    </p>
+                        <input type="button" value="{{this.status_reserva}}" id="statusReserva" class="titleItem statusReserva">
                     <p class="titleItem">
                         {{this.id}}
                     </p>

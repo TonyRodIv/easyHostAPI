@@ -107,9 +107,7 @@
                     <p class="titleItem">
                         {{this.data_saida}}
                     </p>
-                    <p class="titleItem">
-                        {{this.status_reserva}}
-                    </p>
+                        <input type="button" value="{{this.status_reserva}}" id="statusReserva" class="titleItem statusReserva">
                     <p class="titleItem">
                         {{this.id}}
                     </p>
@@ -120,49 +118,3 @@
     </section>
 </main>
 
-
-<section class="modalBg" id="modal">
-    <section class="modal">
-        <header class="headModal">
-            <p class="titlePage">
-                Adicionar Reserva
-            </p>
-        </header>
-        <form action="/reserve/add" method="POST" class="form">
-            <section class="formInputs">
-                <figure class="inputField">
-                    <p class="inputName">Nome da Acomodação</p>
-
-                    <input type="text" name="nome_acomodacao" id="" placeholder="Digite o nome da Acomodação"
-                        class="inputModal">
-                </figure>
-                <figure class="inputField">
-                    <p class="inputName">Nome do Hóspede</p>
-
-                    <input type="text" name="nome_hospede" id="" placeholder="Digite o nome do Hóspede"
-                        class="inputModal">
-                </figure>
-                <figure class="inputField">
-                    <p class="inputName">Status da Reserva</p>
-
-                    <input type="number" name="status_reserva" id="" placeholder="Digite o Status da Reserva"   class="inputModal">
-                </figure>
-                <figure class="inputField">
-                    <p class="inputName">Data de Entrada</p>
-            
-                <input type="date" name="data_entrada" id="" placeholder="Digite a data de entrada" class="inputModal">
-                </figure>
-                <figure class="inputField">
-                    <p class="inputName">Data de Saída</p>
-                    
-                <input type="date" name="data_saida" id="" placeholder="Digite a data de saída" class="inputModal">
-                </figure>
-            </section>
-
-            <section class="modalBtns">
-                <input type="button" value="Cancelar" class="cancelBtn" id="cancelBtn">
-                <input type="submit" value="Adicionar Reserva" class="submitBtn" id="addBtn">
-            </section>
-        </form>
-    </section>
-</section>

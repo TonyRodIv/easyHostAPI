@@ -1,7 +1,7 @@
 {
   "name": "easyhost",
   "version": "1.0.0",
-  "description": "",
+  "description": "Seu serviço de gerenciamento de hospedagens!",
   "main": "server.js",
   "scripts": {
     "start": "nodemon ./server.js"
